@@ -1,2 +1,2 @@
 this is to test how versioning works :p
-project: database on 5 star hotel management
+project: database on 5 star hotel management system
