@@ -1,0 +1,154 @@
+/* --------------------------------------------------------------------------------------
++
++ HEADER
++
+-------------------------------------------------------------------------------------- */
+header  {
+	height: 76px;
+	display: block;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 10001;
+	background: #1F1F1F;
+	// background: $header-bgr;
+	.container {
+		position: relative;
+		height: 100%;
+		padding: 0;
+	}
+	#logo {
+		font-size: 24px;
+		text-transform: uppercase;
+		text-align: center;
+		float: left;
+		display: block;
+		width: 133px;
+		margin-top: 19px;
+		margin-left: 10px;
+		height: 39px;
+		line-height: 33px;
+		color: #fff;
+		@include background(image-url('logo_bgr.png', false, false) no-repeat 0 0);
+		&:hover {
+			color: #ccc;
+		}
+	}
+	nav {
+		position: absolute;
+		right: -2%;
+		padding-right: 20px;
+		top: 0;
+		height: 100%;
+		width: 40px;
+		display: block;
+		@include background(image-url('menu_drop.png', false, false) no-repeat 50% 50%);
+		cursor: pointer;
+		ul {
+			position: absolute;
+			top: 100%;
+			display: block;
+			background: #1F1F1F;
+			@include opacity(0);
+			visibility: hidden;
+			right: 0;
+			overflow-y: auto;
+			@include transition(all .2s ease);
+			@include background(image-url('dropdown_bgr.png', false, false) repeat 0 0);
+			.ie8 & {
+				visibility: visible;
+				@include opacity(1);
+				display: none;
+			}
+			&.active {
+				@include transition(all .5s ease);
+				@include opacity(1);
+				visibility: visible;
+				.ie8 & {
+					display: block;
+				}
+			}
+			li {
+				width: 100%;
+				a {
+					color: #fff;
+					text-align: right;
+					display: block;
+					padding: 10px 20px 10px 20px;
+					border-top: 1px solid #5b5b5b;
+					&:hover {
+						color: $link-clr;
+						background-color: #1F1F1F + #111;
+					}
+				}
+			}
+		}
+	}
+	form {
+		display: none;
+	}
+	@media (min-width: 700px) {
+		#logo {
+			margin-left: 0;
+		}
+		nav {
+			position: static;
+			right: auto;
+			padding-right: 0;
+			top: auto;
+			height: 100%;
+			width: auto;
+			display: block;
+			background: none;
+			cursor: default;		
+			float: right;
+			ul {
+				position: relative;
+				top: auto;
+				display: inline-block;
+				background: transparent;
+				width: auto !important;
+				@include opacity(1);
+				visibility: visible;
+				right: auto;
+				overflow-y: auto;
+				@include transition(all .2s ease);
+				.ie8 & {
+					display: block;
+				}
+				li {
+					width: auto;
+					float: left;
+					@include lh(76px);
+					& + li {
+						margin-left: 25px;
+					}
+					a {
+						text-align: left;
+						padding: 0;
+						border-top: none;
+						font-size: 15px;
+						&:hover {
+							background-color: transparent;
+						}
+					}
+				}				
+			}				
+		}
+		form {
+			display: block;
+			width: 35px;
+			float: right;
+	        margin-left: 40px;
+	        padding-top: 17px;
+		}		
+	}	
+	@media (min-width: 800px) {
+		form {
+			margin-left: 100px;
+		}
+	}
+}
+
+

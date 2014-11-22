@@ -1,0 +1,33 @@
+/* --------------------------------------------------------------------------------------
++
++ LAYOUT
++
+-------------------------------------------------------------------------------------- */
+
+@import "compass/layout.scss";
+
+@include sticky-footer(auto, ".layout", ".layout_footer", "footer");
+
+
+.container {
+    margin: 0 auto;
+    width: $page-width;
+    min-width: $page-width;
+    padding: 0 2%;
+    @include bs;
+	@media (min-width: 960px) {
+		padding: 0;
+	    width: 960px;
+	    min-width: 960px;
+	}
+}
+
+.left {
+	float: left;
+	
+}
+
+.right {
+	float: right;
+	
+}

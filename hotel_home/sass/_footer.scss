@@ -1,0 +1,36 @@
+/* --------------------------------------------------------------------------------------
++
++ FOOTER
++
+-------------------------------------------------------------------------------------- */
+footer {
+	background-color: $footer-bgr;
+	padding: 20px 0;
+	text-align: center;
+	small {
+		color: #fff;
+		font-size: 12px;
+	}
+	nav {
+		display: none;
+		ul {
+			float: right;
+		}
+		li {
+			float: left;
+			margin-left: 20px;
+			a {
+				color: #fff;
+				font-size: 12px;
+			}
+		}
+	}
+	
+	@media (min-width: 768px) {
+		text-align: left;
+		nav {
+			display: block;
+			float: right;
+		}
+	}
+}

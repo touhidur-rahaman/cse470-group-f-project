@@ -1,0 +1,32 @@
+/* --------------------------------------------------------------------------------------
++
++ BUTTONS
++
+-------------------------------------------------------------------------------------- */
+
+.btn {
+    @include lh(36px);
+    text-align: center;
+    padding: 0 22px;
+    color: $btn-clr;
+    background: $btn-bgr;
+    border: none;
+    display: inline-block;
+    @include radius;
+    @include transition(all .3s ease);
+    font-family: $base-font;
+    font-size: $base-font-size;
+    @include text-shadow(0 1px 0 rgba(0,0,0,.12));
+    @include box-shadow(inset 0 -1px 0 rgba(0,0,0,.15));
+    &:hover {
+        background: $btn-hover;
+    }
+    #services & {
+        @include lh(43px);
+    }
+    // &.small {  }
+
+    // &.medium {  }
+
+    // &.large {  }
+}

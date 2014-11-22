@@ -1,0 +1,48 @@
+/* --------------------------------------------------------------------------------------
++
++ VARIABLES
++
+-------------------------------------------------------------------------------------- */
+
+//GLOBAL VARIABLES
+
+$experimental-support-for-svg:          true;
+
+//Basic colors
+$base-clr:                            	#fff;
+$header-bgr:                            rgba(0,0,0,0.88);
+$footer-bgr:							#32a2e3;
+$base-font:                             'Open Sans', sans-serif;
+$title-font:                            'Open Sans', sans-serif;
+$base-font-size:                        14px;
+$base-line-height:                      1.5;
+
+$text-clr: 								#373535;
+$second-clr:							#fff;
+$title-clr:								#373535;
+$link-clr:								#32a2e3;
+$link-hover:							#1c7fb9;
+
+$border:								#e5e5e5;
+$border2:								#dcdada;
+
+$footer-clr:							#fff;
+
+$input-clr:								$text-clr;
+$input-bgr:								#fff;
+
+$btn-clr:								#fff;
+$btn-bgr:								#32a2e3;
+$btn-hover:								#1c7fb9;
+
+
+//LAYOUT
+$space:                          		20px;
+$page-width:                            96%;
+$radius:								3px;
+
+
+//SELECT TEXT
+$selected-text-bgr:						#000;
+$selected-text-clr:						#fff;
+
