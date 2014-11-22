@@ -5,11 +5,19 @@ if ($mysqli->connect_errno) {
 }
 echo 'Database has been connected... <br> Now installing...';
 $sql = "drop database if exists hotel;  
+<<<<<<< HEAD
 create database hotel;
 use hotel;
 create table customer (cust_id int not null auto_increment, first_name varchar(20), last_name varchar(20), cust_email varchar (30), gender varchar(10), address varchar(30), phone_no varchar(10), primary key(cust_id));
 
 create table review (rev_id int not null auto_increment, cust_name varchar (40), cust_email varchar (30) not null, comments varchar(100), rating int not null, primary key (rev_id));
+=======
+create database hotel; 
+use hotel; 
+create table customer (cust_id int not null auto_increment, first_name varchar(20), last_name varchar(20), cust_email varchar (30), gender varchar(10), address varchar(30), phone_no varchar(10), primary key(cust_id));
+
+create table review (rev_id int not null auto_increment, cust_id int not null, comments varchar(100), rating int not null, primary key (rev_id), foreign key (cust_id) references customer(cust_id));
+>>>>>>> origin/master
 
 create table packages (pack_no int not null auto_increment, pack_type varchar(20), room_type varchar(20), price int not null, cust_id int not null, primary key (pack_no, pack_type), foreign key (cust_id) references customer(cust_id));
 
@@ -34,8 +42,16 @@ insert into customer values (null,'Justin','Beiber', 'justin.beiber@gmail.com', 
 insert into customer values (null,'Roger','Federer', 'roger.federer@gmail.com', 'male','Banani','97322');
 insert into customer values (null,'Novak','Djokovic', 'novak.djokovic@gmail.com', 'male','Gulshan','92479');
 
+<<<<<<< HEAD
 insert into review values (null, 'farhan', 'farhan@yahoo.com', 'great','5');
 insert into review values (null, 'shahrin', 'shahrin@yahoo.com', 'bad','1');
+=======
+insert into review values (null,'5','good','4');
+insert into review values (null,'3','satisfied','5');
+insert into review values (null,'2','so so','3.5');
+insert into review values (null,'6','very good','4');
+insert into review values (null,'4','not satisfied','3');
+>>>>>>> origin/master
 
 insert into packages values (null,'eid','single','40000','1');
 insert into packages values (null,'summer','double','45000','2');
@@ -91,5 +107,8 @@ do {
         $res->free();
     }
 } while ($mysqli->more_results() && $mysqli->next_result());
+<<<<<<< HEAD
 echo"<br>Completed!";
+=======
+>>>>>>> origin/master
 ?>
