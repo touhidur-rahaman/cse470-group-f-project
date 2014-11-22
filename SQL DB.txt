@@ -46,7 +46,7 @@ insert into rooms values (210,'presidential','1900','','','vacant','');
 insert into rooms values (202,'premier','370','','','booked','5');
 insert into rooms values (307,'royal suite','1500','','','vacant','');
 insert into rooms values (215,'cottage','750','','','filled','3');
-insert into rooms values (205,'royal delux','1600','','','booked','1');
+insert into rooms values (205,'royal deluxe','1600','','','booked','1');
 insert into rooms values (305,'suite','1200','','','filled','4');
 
 
