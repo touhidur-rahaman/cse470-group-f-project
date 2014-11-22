@@ -140,10 +140,11 @@
               </div>
               <label class='medium first_inputs'>
                 <span>Type of room:</span>
-                <select class='select_white' name='selectRoom' >
+                <select class='select_white' name='type' >
                   <option disabled selected>Room Type</option> 
-                  <option>Single room</option>
-                  <option>Quadraple Room</option>
+                  <option value="single">Single room</option>
+                  <option value="double">Double Room</option>
+				  <option value="triple">Triple Room</option>
                 </select>              
               </label>    
               <label class='medium first_inputs'>
@@ -158,12 +159,8 @@
                 <span>No. of Room:</span>
                 <select class='select_white' name='rooms'>
                   <option disabled selected>0</option> 
-                  <option>0</option>
                   <option>1</option>
                   <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
                 </select>              
               </label>   
               <label for="" class='button'>
@@ -172,14 +169,18 @@
               </label>
               <div class="clearfix"></div>
               <div class="hidden_elements">
-                <label for="" class='inputs'>
-                  <span>Name</span>
-                  <input type="text" name='name1'>
+                <label for="" class='first_inputs'>
+                  <span>First Name</span>
+                  <input type="text" name='fname'>
                 </label>
-                <label for="" class='inputs'>
+				<label for="" class='first_inputs'>
+                  <span>Last Name</span>
+                  <input type="text" name='lname'>
+                </label>
+                <label for="" class='first_inputs'>
                   <span>Email</span>
                   <input type="email" name='email1'>
-                </label>
+                </label>				
                 <label for="" class='textarea'>
                   <span>Details</span>
                   <textarea name='comments'></textarea>
@@ -202,7 +203,7 @@
             <ul>
               <li>
                 <img src="images/img1.jpg" alt="">
-                <h2>Single room 49£</h2>
+                <h2>Single room BDT999</h2>
                 <p>Single bedroom with a kitchen, mini-fridge, bathroom with slippers and hair-dryer, LCD TV and free Wi-Fi.</p>
                 <a href="" class="read_more">Read more</a>
                 <div class="hidden">
@@ -212,7 +213,7 @@
               </li>
               <li>
                 <img src="images/img1.jpg" alt="">
-                <h2>Double room 89£</h2>
+                <h2>Double room BDT999</h2>
                 <p>Double room with a kitchen, mini-fridge, bathroom with slippers and hair-dryer, LCD TV and free Wi-Fi.</p>
                 <a href="" class="read_more">Read more</a>
                 <div class="hidden">
@@ -222,7 +223,7 @@
               </li>
               <li>
                 <img src="images/img1.jpg" alt="">
-                <h2>Triple room 129£</h2>
+                <h2>Triple room BDT999</h2>
                 <p>Triple room with a kitchen, mini-fridge, bathroom with slippers and hair-dryer, LCD TV and free Wi-Fi.</p>
                 <a href="" class="read_more">Read more</a>
                 <div class="hidden">
@@ -345,7 +346,7 @@
         <section id="contact">
           <div class="container">
             <h1>Let us know about your experience!</h1>
-            <form action="form_data.php" method="post" novalidate class='contact-form'>
+            <form action="form_data.php" method="post" class='contact-form'>
               <label>
                 <span>Name</span>
                 <input type="text" name='name'>
@@ -354,6 +355,16 @@
                 <span>Email</span>
                 <input type="email" name='email'>
               </label>
+			  <label for="" class='first_inputs'>
+                  <span>Rating</span>
+                  <select class='select_white' name='rating'>
+					  <option selected>5</option>
+					  <option>4</option>
+					  <option>3</option>
+					  <option>2</option>
+					  <option>1</option>
+                 </select>  
+                </label>
               <label class='message_box'>
                 <span>Review</span>
                 <textarea name='message'></textarea>
@@ -376,7 +387,7 @@
   <!-- BEGIN FOOTER -->
   <footer>
     <div class="container">
-      <small>&copy; 2014 The Hotel. All Rights Reserved. Design &amp; code by <b>Group F</b></small>
+      <small>&copy; 2014 The Hotel. All Rights Reserved. Developed by <b>Group F</b></small>
       <nav class="right">
         <ul>
           <li><a href="#home_slider">Hotel</a></li>

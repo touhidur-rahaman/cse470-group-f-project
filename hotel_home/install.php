@@ -1,0 +1,95 @@
+<?PHP 
+$mysqli = new mysqli("localhost", "root", "");
+if ($mysqli->connect_errno) {
+    echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+}
+echo 'Database has been connected... <br> Now installing...';
+$sql = "drop database if exists hotel;  
+create database hotel;
+use hotel;
+create table customer (cust_id int not null auto_increment, first_name varchar(20), last_name varchar(20), cust_email varchar (30), gender varchar(10), address varchar(30), phone_no varchar(10), primary key(cust_id));
+
+create table review (rev_id int not null auto_increment, cust_name varchar (40), cust_email varchar (30) not null, comments varchar(100), rating int not null, primary key (rev_id));
+
+create table packages (pack_no int not null auto_increment, pack_type varchar(20), room_type varchar(20), price int not null, cust_id int not null, primary key (pack_no, pack_type), foreign key (cust_id) references customer(cust_id));
+
+create table rooms (room_no int not null, type varchar(20), check_in varchar(20), check_out varchar(20), status varchar(20), pack_no int, primary key (room_no), foreign key (pack_no) references packages(pack_no));
+
+create table employee (ssn int not null auto_increment, first_name varchar(20), last_name varchar(20), emp_type varchar(20), salary int not null, phone int not null, room_serving int, primary key(ssn), foreign key(room_serving) references rooms(room_no) );
+
+create table food(food_id int not null auto_increment, food_name varchar(30), type varchar(10), food_price int not null, primary key (food_id));
+
+create table bill(bill_no int not null auto_increment, date varchar(20), amount int not null, pay_by varchar(10), cust_id int not null, primary key (bill_no), foreign key (cust_id) references customer(cust_id));
+
+create table facilities(fac_id int not null auto_increment, type varchar(50), rate int not null, cust_id int, primary key (fac_id), foreign key(cust_id) references customer(cust_id));
+
+create table order_index(order_id int not null auto_increment, cust_id int not null, food_id int not null, primary key(order_id), foreign key(cust_id) references customer(cust_id), foreign key(food_id) references food(food_id)); 
+
+create table reserve(reserve_id int not null auto_increment, first_name varchar(20), last_name varchar(20), cust_email varchar (30), quantity int not null, details varchar(200), primary key (reserve_id));
+
+insert into customer values (null,'Adam','Smith', 'adam.smith@gmail.com', 'male','Mirpur','12997');
+insert into customer values (null,'Lady','Gaga', 'lady.gaga@gmail.com', 'female','Fokirapul','12788');
+insert into customer values (null,'Nicki','Minaj', 'nicki.minaj@gmail.com', 'female','Hatirzill','98756');
+insert into customer values (null,'Justin','Beiber', 'justin.beiber@gmail.com', 'male','Khamarbari','92874');
+insert into customer values (null,'Roger','Federer', 'roger.federer@gmail.com', 'male','Banani','97322');
+insert into customer values (null,'Novak','Djokovic', 'novak.djokovic@gmail.com', 'male','Gulshan','92479');
+
+insert into review values (null, 'farhan', 'farhan@yahoo.com', 'great','5');
+insert into review values (null, 'shahrin', 'shahrin@yahoo.com', 'bad','1');
+
+insert into packages values (null,'eid','single','40000','1');
+insert into packages values (null,'summer','double','45000','2');
+insert into packages values (null,'honeymoon','single','60000','3');
+insert into packages values (null,'executive','single','50000','4');
+insert into packages values (null,'anniversary','three','35000','5');
+
+insert into rooms values (101,'single','','','filled', null);
+insert into rooms values (102,'single','','','booked', null);
+insert into rooms values (103,'single','','','vacant', null);
+insert into rooms values (104,'single','','','vacant', null);
+insert into rooms values (105,'single','','','vacant', null);
+insert into rooms values (201,'double','','','filled', null);
+insert into rooms values (202,'double','','','vacant', null);
+insert into rooms values (203,'double','','','vacant', null);
+insert into rooms values (204,'double','','','vacant', null);
+insert into rooms values (205,'double','','','vacant', null);
+insert into rooms values (301,'triple','','','filled', null);
+insert into rooms values (302,'triple','','','vacant', null);
+insert into rooms values (303,'triple','','','vacant', null);
+insert into rooms values (304,'triple','','','vacant', null);
+insert into rooms values (305,'triple','','','vacant', null);
+
+insert into employee values (null,'Raju','Ahmed','manager','60000','20397',null);
+insert into employee values (null,'Nantu','Sorkar','laundry','10000','29187',null);
+insert into employee values (null,'Shahrin','Manzur','room service','9500','12893','305');
+insert into employee values (null,'Shibli','Hosen','sweeper','5000','21871',null);
+insert into employee values (null,'Rita','Akhter','room service','9500','28327','203');
+
+insert into food values (null,'Happy Morning','breakfast','2000');
+insert into food values (null,'Breakfast Delight','breakfast','3500');
+insert into food values (null,'Sea Food Delight','lunch','4500');
+insert into food values (null,'Kashmiri Palate','dinner','4000');
+insert into food values (null,'Dhakaiya Palate','dinner','4500');
+
+insert into facilities values(null,'Spa','2500', null);
+insert into facilities values(null,'Transport','3000', null);
+insert into facilities values(null,'Pool','2000', null);
+insert into facilities values(null,'Gym','1500', null);
+insert into facilities values(null,'Laundry','1000', null);
+insert into facilities values(null,'Newspaper','500', null);
+
+insert into reserve values (null,'burhan','uddin', 'burhan.uddin@gmail.com', '2', null);
+insert into reserve values (null,'farhan','sadick', 'farhan@gmail.com', '2', null);";
+		   
+if (!$mysqli->multi_query($sql)) {
+    echo "Multi query failed: (" . $mysqli->errno . ") " . $mysqli->error;
+}
+
+do {
+    if ($res = $mysqli->store_result()) {
+        var_dump($res->fetch_all(MYSQLI_ASSOC));
+        $res->free();
+    }
+} while ($mysqli->more_results() && $mysqli->next_result());
+echo"<br>Completed!";
+?>
