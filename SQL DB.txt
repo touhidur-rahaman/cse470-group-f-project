@@ -49,11 +49,11 @@ insert into rooms values (202,'double','','','vacant', null);
 insert into rooms values (203,'double','','','vacant', null);
 insert into rooms values (204,'double','','','vacant', null);
 insert into rooms values (205,'double','','','vacant', null);
-insert into rooms values (301,'three','','','filled', null);
-insert into rooms values (302,'three','','','vacant', null);
-insert into rooms values (303,'three','','','vacant', null);
-insert into rooms values (304,'three','','','vacant', null);
-insert into rooms values (305,'three','','','vacant', null);
+insert into rooms values (301,'triple','','','filled', null);
+insert into rooms values (302,'triple','','','vacant', null);
+insert into rooms values (303,'triple','','','vacant', null);
+insert into rooms values (304,'triple','','','vacant', null);
+insert into rooms values (305,'triple','','','vacant', null);
 
 insert into employee values (null,'Raju','Ahmed','manager','60000','20397',null);
 insert into employee values (null,'Nantu','Sorkar','laundry','10000','29187',null);
