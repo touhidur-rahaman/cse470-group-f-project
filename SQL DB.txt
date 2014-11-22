@@ -1,4 +1,4 @@
-create table customer (cust_id int not null auto_increment, first_name varchar(20), last_name varchar(20), gender varchar(10), address varchar(30), phone_no varchar(10), fac_id int, primary key(cust_id));
+create table customer (cust_id int not null auto_increment, first_name varchar(20), last_name varchar(20), gender varchar(10), address varchar(30), phone_no varchar(10), primary key(cust_id));
 
 create table review (rev_id int not null auto_increment, cust_id int not null, comments varchar(100), rating int not null, primary key (rev_id), foreign key (cust_id) references customer(cust_id));
 
@@ -12,7 +12,7 @@ create table food(food_id int not null auto_increment, food_name varchar(30), ty
 
 create table bill(bill_no int not null auto_increment, date varchar(20), amount int not null, pay_by varchar(10),cust_id int not null, primary key (bill_no), foreign key (cust_id) references customer(cust_id));
 
-create table facilities(fac_id int not null auto_increment, type varchar(50), rate int not null, primary key (fac_id));
+create table facilities(fac_id int not null auto_increment, type varchar(50), rate int not null, cust_id int, primary key (fac_id), foreign key(cust_id) references customer(cust_id));
 
 create table order_index(order_id int not null auto_increment, cust_id int not null, food_id int not null, primary key(order_id), foreign key(cust_id) references customer(cust_id), foreign key(food_id) references food(food_id)); 
 
@@ -20,12 +20,12 @@ create table reserve(reserve_id int not null auto_increment, room_no int not nul
 
 
 
-insert into customer values (null,'Adam','Smith','male','Mirpur','12997', null);
-insert into customer values (null,'Lady','Gaga','female','Fokirapul','12788', null);
-insert into customer values (null,'Nicki','Minaj','female','Hatirzill','98756', null);
-insert into customer values (null,'Justin','Beiber','male','Khamarbari','92874', null);
-insert into customer values (null,'Rger','Federer','male','Banani','97322', null);
-insert into customer values (null,'Novak','Djokovic','male','Gulshan','92479', null);
+insert into customer values (null,'Adam','Smith','male','Mirpur','12997');
+insert into customer values (null,'Lady','Gaga','female','Fokirapul','12788');
+insert into customer values (null,'Nicki','Minaj','female','Hatirzill','98756');
+insert into customer values (null,'Justin','Beiber','male','Khamarbari','92874');
+insert into customer values (null,'Rger','Federer','male','Banani','97322');
+insert into customer values (null,'Novak','Djokovic','male','Gulshan','92479');
 
 insert into review values (null,'5','good','4');
 insert into review values (null,'3','satisfied','5');
@@ -58,12 +58,12 @@ insert into food values (null,'Sea Food Delight','lunch','4500');
 insert into food values (null,'Kashmiri Palate','dinner','4000');
 insert into food values (null,'Dhakaiya Palate','dinner','4500');
 
-insert into facilities values(null,'Spa','2500');
-insert into facilities values(null,'Transport','3000');
-insert into facilities values(null,'Pool','2000');
-insert into facilities values(null,'Gym','1500');
-insert into facilities values(null,'Laundry','1000');
-insert into facilities values(null,'Newspaper','500');
+insert into facilities values(null,'Spa','2500', null);
+insert into facilities values(null,'Transport','3000', null);
+insert into facilities values(null,'Pool','2000', null);
+insert into facilities values(null,'Gym','1500', null);
+insert into facilities values(null,'Laundry','1000', null);
+insert into facilities values(null,'Newspaper','500', null);
 
 insert into reserve values (null,'202','2','3');
 insert into reserve values (null,'205','5','1');
