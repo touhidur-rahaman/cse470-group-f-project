@@ -1,3 +1,5 @@
+create database hotel;
+use hotel;
 create table customer (cust_id int not null auto_increment, first_name varchar(20), last_name varchar(20), cust_email varchar (30), gender varchar(10), address varchar(30), phone_no varchar(10), primary key(cust_id));
 
 create table review (rev_id int not null auto_increment, cust_id int not null, comments varchar(100), rating int not null, primary key (rev_id), foreign key (cust_id) references customer(cust_id));
@@ -16,7 +18,7 @@ create table facilities(fac_id int not null auto_increment, type varchar(50), ra
 
 create table order_index(order_id int not null auto_increment, cust_id int not null, food_id int not null, primary key(order_id), foreign key(cust_id) references customer(cust_id), foreign key(food_id) references food(food_id)); 
 
-create table reserve(reserve_id int not null auto_increment, cust_email varchar (30), quantity int not null, primary key (reserve_id));
+create table reserve(reserve_id int not null auto_increment, first_name varchar(20), last_name varchar(20), cust_email varchar (30), quantity int not null, primary key (reserve_id));
 
 insert into customer values (null,'Adam','Smith', 'adam.smith@gmail.com', 'male','Mirpur','12997');
 insert into customer values (null,'Lady','Gaga', 'lady.gaga@gmail.com', 'female','Fokirapul','12788');
@@ -72,5 +74,5 @@ insert into facilities values(null,'Gym','1500', null);
 insert into facilities values(null,'Laundry','1000', null);
 insert into facilities values(null,'Newspaper','500', null);
 
-insert into reserve values (null,'burhan.uddin@gmail.com','2');
-insert into reserve values (null,'farhan@gmail.com','2');
+insert into reserve values (null,'burhan','uddin', 'burhan.uddin@gmail.com','2');
+insert into reserve values (null,'farhan','sadick', 'farhan@gmail.com','2');
