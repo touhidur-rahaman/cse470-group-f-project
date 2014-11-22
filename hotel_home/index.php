@@ -138,10 +138,10 @@
                   </div>
                 </div>
               </div>
-              <label class='first_inputs'>
+              <label class='medium first_inputs'>
                 <span>Type of room:</span>
                 <select class='select_white' name='selectRoom' >
-                  <option disabled selected>Select a type of room</option> 
+                  <option disabled selected>Room Type</option> 
                   <option>Single room</option>
                   <option>Quadraple Room</option>
                 </select>              
@@ -154,9 +154,9 @@
                 <span>Check-out date:</span>
                 <input type="text" class="datepicker" name='check_out'>
               </label>          
-              <label class='small first_inputs'>
-                <span>Adults:</span>
-                <select class='select_white' name='adults'>
+              <label class='medium first_inputs'>
+                <span>No. of Room:</span>
+                <select class='select_white' name='rooms'>
                   <option disabled selected>0</option> 
                   <option>0</option>
                   <option>1</option>
@@ -165,19 +165,7 @@
                   <option>4</option>
                   <option>5</option>
                 </select>              
-              </label>              
-              <label class='small first_inputs'>
-                <span>Children:</span>
-                <select class='select_white' name='children'>
-                  <option disabled selected>0</option> 
-                  <option>0</option>
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                </select>              
-              </label> 
+              </label>   
               <label for="" class='button'>
                 <span>book</span>
                 <a href='#' class="btn">Book now</a>             
@@ -347,7 +335,7 @@
                 <span><b>Address:</b> 66 Mohakhali</span>
                 <span><b>Place:</b> Dhaka</span>
                 <span><b>Phone:</b> +880-2-8824051-4</span>
-                <span><b>Email:</b> support@hotel.com</span>              </div>
+                <span><b>Email:</b> support@hotel.com</span></div>
             </div>
           </div>
         </section>
@@ -356,7 +344,7 @@
         <!-- Begin of #contact  --> 
         <section id="contact">
           <div class="container">
-            <h1>Contact Form</h1>
+            <h1>Let us know about your experience!</h1>
             <form action="form_data.php" method="post" novalidate class='contact-form'>
               <label>
                 <span>Name</span>
@@ -366,21 +354,11 @@
                 <span>Email</span>
                 <input type="email" name='email'>
               </label>
-              <label>
-                <span>Subject</span>
-                <select class='select_white' name='subject'>
-                  <option disabled selected>Select a subject</option> 
-                  <option>Subject 1</option>
-                  <option>Subject 2</option>
-                  <option>Subject 3</option>
-                  <option>Subject 4</option>
-                </select>              
-              </label>
               <label class='message_box'>
-                <span>Message</span>
+                <span>Review</span>
                 <textarea name='message'></textarea>
               </label>
-              <button type="submit" class="btn">Send Message</button>
+              <button type="submit" class="btn">Post Review</button>
             </form>
           </div>
         </section>
