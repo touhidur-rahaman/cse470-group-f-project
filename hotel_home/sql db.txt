@@ -1,10 +1,3 @@
-<?PHP 
-$mysqli = new mysqli("localhost", "root", "");
-if ($mysqli->connect_errno) {
-    echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
-}
-echo 'Database has been connected... <br> Now installing...';
-$sql = "drop database if exists hotel;  
 create database hotel;
 use hotel;
 create table customer (cust_id int not null auto_increment, first_name varchar(20), last_name varchar(20), cust_email varchar (30), gender varchar(10), address varchar(30), phone_no varchar(10), primary key(cust_id));
@@ -79,17 +72,4 @@ insert into facilities values(null,'Laundry','1000', null);
 insert into facilities values(null,'Newspaper','500', null);
 
 insert into reserve values (null,'burhan','uddin', 'burhan.uddin@gmail.com', '2', null);
-insert into reserve values (null,'farhan','sadick', 'farhan@gmail.com', '2', null);";
-		   
-if (!$mysqli->multi_query($sql)) {
-    echo "Multi query failed: (" . $mysqli->errno . ") " . $mysqli->error;
-}
-
-do {
-    if ($res = $mysqli->store_result()) {
-        var_dump($res->fetch_all(MYSQLI_ASSOC));
-        $res->free();
-    }
-} while ($mysqli->more_results() && $mysqli->next_result());
-echo"<br>Completed!";
-?>
+insert into reserve values (null,'farhan','sadick', 'farhan@gmail.com', '2', null);
