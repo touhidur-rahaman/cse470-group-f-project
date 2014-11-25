@@ -39,8 +39,8 @@
             <li><a href="#services">Services</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#location">Location</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#location">Find us</a></li>
+            <li><a href="#contact">Be Connected</a></li>
           </ul> 
         </nav>
       </div>
@@ -68,7 +68,7 @@
                 <div class="text_wrap">
                   <div class="text">
                     <div class="text_cell">
-                      <h1>Charming hotel in the heart of Dhaka</h1>
+                      <h1>Best and beautiful most hotel in the heart of Dhaka</h1>
                       <h2>Deluxe and standard rooms</h2>
                     </div>
                   </div>
@@ -113,7 +113,7 @@
                   <div class="text">
                     <div class="text_cell">
                       <h1>single rooms at affordable prices</h1>
-                      <h2>Weekend package for 2 persons. Only BDT4000 per night.</h2>         
+                      <h2>Weekend package for 2 persons. Only BDT15,000 per night.</h2>         
                     </div>                   
                   </div>
                 </div>
@@ -134,7 +134,7 @@
                 <div class="wrap">
                   <div class="text_wrap">
                     <h1>Online Booking</h1>
-                    <p>Make an reservation</p>
+                    <p>Make a reservation</p>
                   </div>
                 </div>
               </div>
@@ -142,9 +142,9 @@
                 <span>Type of room:</span>
                 <select class='select_white' name='type' >
                   <option disabled selected>Room Type</option> 
-                  <option value="single">Single room</option>
-                  <option value="double">Double Room</option>
-				  <option value="triple">Triple Room</option>
+                  <option value="single">Single Bed</option>
+                  <option value="double">Double Bed</option>
+				  <option value="triple">Club suite</option>
                 </select>              
               </label>    
               <label class='medium first_inputs'>
@@ -161,6 +161,8 @@
                   <option disabled selected>0</option> 
                   <option>1</option>
                   <option>2</option>
+				  <option>3</option>
+				  <option>4</option>
                 </select>              
               </label>   
               <label for="" class='button'>
@@ -203,7 +205,7 @@
             <ul>
               <li>
                 <img src="images/img1.jpg" alt="">
-                <h2>Single room BDT999</h2>
+                <h2>Single bed room at BDT10,000</h2>
                 <p>Single bedroom with a kitchen, mini-fridge, bathroom with slippers and hair-dryer, LCD TV and free Wi-Fi.</p>
                 <a href="" class="read_more">Read more</a>
                 <div class="hidden">
@@ -213,7 +215,7 @@
               </li>
               <li>
                 <img src="images/img1.jpg" alt="">
-                <h2>Double room BDT999</h2>
+                <h2>Double bed room at BDT15,000</h2>
                 <p>Double room with a kitchen, mini-fridge, bathroom with slippers and hair-dryer, LCD TV and free Wi-Fi.</p>
                 <a href="" class="read_more">Read more</a>
                 <div class="hidden">
@@ -223,8 +225,8 @@
               </li>
               <li>
                 <img src="images/img1.jpg" alt="">
-                <h2>Triple room BDT999</h2>
-                <p>Triple room with a kitchen, mini-fridge, bathroom with slippers and hair-dryer, LCD TV and free Wi-Fi.</p>
+                <h2>Club suite at BDT20,000</h2>
+                <p>Club suite with a kitchen, mini-fridge, bathroom with slippers and hair-dryer, LCD TV and free Wi-Fi.</p>
                 <a href="" class="read_more">Read more</a>
                 <div class="hidden">
                   <p><br/><b>Room size:</b> 25 square meters. <br/><b>Beds:</b> 3 single beds or one double bed, according to your desires and vacancy.</p>
@@ -240,7 +242,7 @@
         <section id="about">
           <div class="container">
             <div class="header">
-              <h1>Let us take care of it for you</h1>
+              <h1>Give us a chance to serve you.</h1>
               <p>Hotel offers you a pleasant and comfortable stay, and when you visit us you will see for yourself that there is nothing we cherish more than the quality of service and satisfaction of our guests.</p>
             </div>
             <ul>
