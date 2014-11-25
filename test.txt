@@ -1,2 +1,3 @@
 this is to test how versioning works :p
 project: database on 5 star hotel management system
+we also need to do bug testing using MENTIS!!!
